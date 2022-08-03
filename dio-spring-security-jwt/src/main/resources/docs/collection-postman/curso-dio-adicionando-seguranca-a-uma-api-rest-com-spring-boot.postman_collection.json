@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "b61999e1-8664-494b-89f5-fc64affc8e2d",
+		"name": "curso-dio-adicionando-seguranca-a-uma-api-rest-com-spring-boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Gera token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"glysns\",\r\n    \"password\": \"jwt123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvando usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"GLEYSON\",\r\n    \"username\": \"glysns\",\r\n    \"password\": \"jwt123\",\r\n    \"roles\": [\r\n        \"USERS\",\r\n        \"MANAGERS\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teste acesso em /user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTk1NjA4NzIsImV4cCI6MTY1OTU2NDQ3MiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSUyIsIlJPTEVfTUFOQUdFUlMiXX0.cZGnW9MRayd907jclWevicHsJjmORDSqbhqHJHtHVNBCTOsBweKFhKTbtu7-G_dztxEJa87qC9IGC26xtRoTow",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teste acesso em /managers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTk1NjA4NzIsImV4cCI6MTY1OTU2NDQ3MiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSUyIsIlJPTEVfTUFOQUdFUlMiXX0.cZGnW9MRayd907jclWevicHsJjmORDSqbhqHJHtHVNBCTOsBweKFhKTbtu7-G_dztxEJa87qC9IGC26xtRoTow",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/managers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"managers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
